@@ -1,9 +1,12 @@
+from dotenv import load_dotenv
 import socket
 import os
 import threading
 
-PORT = 5051
-SERVER = '127.0.0.1'
+load_dotenv()
+
+PORT = int(os.getenv('PORT'))
+SERVER = os.getenv('HOST')
 ADDR = (SERVER, PORT)
 DISCONNECT_MESSAGE = "!DISCONNECT"
 

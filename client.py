@@ -1,8 +1,12 @@
+from dotenv import load_dotenv
 import socket
+import os
 
-PORT = 5051
+load_dotenv()
+
+PORT = int(os.getenv('PORT'))
+SERVER = os.getenv('HOST')
 DISCONNECT_MESSAGE = "!DISCONNECT"
-SERVER = "127.0.0.1"
 ADDR = (SERVER, PORT)
 
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
